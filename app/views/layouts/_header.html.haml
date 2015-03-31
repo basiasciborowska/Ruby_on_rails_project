@@ -7,6 +7,5 @@
     %a.navbar-brand{:href => "#"} UjRails
     .navbar-collapse.collapse.navbar-responsive-collapse
       %ul.nav.navbar-nav
-        %li= link_to "Link1", "/path1"
-        %li= link_to "Link2", "/path2"
-        %li= link_to "Link3", "/path3"
+        %li= link_to 'My Blog', controller: 'articles'
+        %li= link_to 'New article', new_article_path
