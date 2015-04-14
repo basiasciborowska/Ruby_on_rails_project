@@ -40,9 +40,13 @@
             %h3 Links
             %ul.nav.nav-list
               //%li.nav-header Sidebar
-              %li= link_to 'My Blog', controller: 'articles'
+              %li= link_to 'My Blog', 'articles#index'
               %li= link_to 'New article', new_article_path
-              %li= link_to "Link3", "/path3"
+              - if user_signed_in?
+                //\Hello, #{current_user.full_name} #{link_to "Sign out", destroy_user_session_path, method: :delete}
+                %li= link_to "Sign out", destroy_user_session_path, method: :delete
+              - else
+                %li= link_to "Sign in", new_user_session_path
           / /.well
         / /span
       / /row
