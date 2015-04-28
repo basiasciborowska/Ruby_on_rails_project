@@ -2,11 +2,15 @@
   %strong Title:
   = @article.title
 %p
+  %strong Picture:
+  %br
+  = image_tag @article.picture.url(:medium)
+  %br
   %strong Text:
   = @article.text
-%h2 Comments
+%h3 Comments:
 = render @article.comments
-%h2 Add a comment:
+%p Add a comment:
 = render 'comments/form'
 = link_to 'Edit', edit_article_path(@article)
 |
